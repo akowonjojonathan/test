@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      color: #4CAF50;
+    }
+
+    p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .redirect-button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .redirect-button:hover {
+      background-color: #45a049;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif" alt="Done" autoplay loop="false" />
+    <h1>Thank you for submitting the form!</h1>
+    <p>Your appointment request has been received.</p>
+    <button class="redirect-button" onclick="redirectToHomePage()">Go to Home Page</button>
+    <p>Redirecting in <span id="countdown">3</span> seconds...</p>
+  </div>
+
+  <script>
+    // Function to redirect to the home page
+    function redirectToHomePage() {
+      window.location.href = "index.html"; // Use the correct relative or absolute URL
+    }
+
+    // Automatically redirect after 3 seconds (3000 milliseconds)
+    setTimeout(function() {
+      redirectToHomePage();
+    }, 3000); // 3 seconds
+
+    // Countdown timer
+    var countdownElement = document.getElementById("countdown");
+    var countdown = 3;
+
+    setInterval(function() {
+      countdown--;
+      countdownElement.textContent = countdown;
+
+      if (countdown === 0) {
+        redirectToHomePage();
+      }
+    }, 1000); // 1 second
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* Default Styles */
+body {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  /* Other default styles */
+  .some-element {
+    font-size: 16px;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  /* Additional dark mode styles */
+  body.dark-mode .some-element {
+    font-size: 18px; /* Overrides the default font-size in dark mode */
+  }
+  /* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Additional dark mode styles */
+body.dark-mode .some-element {
+    font-size: 18px; /* Overrides the default font-size in dark mode */
+}
+
+/* Adjust the color of specific elements in dark mode */
+body.dark-mode .contact-info span {
+    color: #FFD700; /* Change the color to white for better visibility */
+   
+}
+/* Dark Mode Styles for Text Color Change within .info */
+body.dark-mode .info {
+    color: #FFD700; /* Change to the desired text color for dark mode */
+   
+}
+/* Dark Mode Styles for Link Text Color Change within h3 */
+body.dark-mode h3 a {
+    color: #eeff00; /* Change to the desired link text color for dark mode */
+   
+}
+
+body.dark-mode .contact-info a {
+    color: #FFD700; /* Change the color to yellow for better visibility */
+   
+}
+/* Adjust the color of the phone number in dark mode */
+body.dark-mode .contact-info a[href^="tel:"] {
+    color: #FFD700 /* Change the color to yellow for better visibility */
+   
+}
+/* Dark Mode Styles for Text Color Changes */
+body.dark-mode .col-md-3 p {
+    color: #FFD700; /* Change to the desired text color for dark mode */
+   
+}
+
+/* Adjust the color of the email address in dark mode */
+body.dark-mode .contact-info a[href^="mailto:"] {
+    color: #FFD700; /* Change the color to yellow for better visibility */
+   
+}
+/* Adjust the color of the address in dark mode */
+body.dark-mode .contact-info span:contains("Address:") + p {
+    color: #FFD700; /* Change the color to yellow for better visibility */
+   
+}
+/* Dark Mode Styles for the specific h3 element in dark mode */
+body.dark-mode h3.mb-4 {
+    color: #FFD700; /* Change to the desired text color for dark mode */
+}
+/* Dark Mode Styles for .mb-5 */
+body.dark-mode .mb-5 {
+    color: blue; /* Change to the desired text color for dark mode */
+}
+/* Dark Mode Styles for .position */
+body.dark-mode .position {
+    color: blue; /* Change to the desired text color for dark mode */
+}
+
+/* Dark Mode Styles for List Items */
+body.dark-mode ul li {
+    color: #0fa1db; /* Change to the desired text color for dark mode */
+   
+}
+/* Dark Mode Styles for .subheading */
+body.dark-mode .subheading {
+    color: blue; /* Change to the desired text color for dark mode */
+}
+
+/* Dark Mode Styles for Text Color Changes */
+body.dark-mode .col-md-3 p span,
+body.dark-mode .col-md-3 p a {
+    color: #FFD700; /* Change to the desired text color for dark mode */
+   
+}
+
+
+body.dark-mode .contact-info h2 {
+    color: #eeff00; /* Change the color to white for better visibility */
+   
+}
+/* Dark Mode Styles for Heading Text Color Change */
+body.dark-mode .heading {
+    color: #eeff00; /* Change to the desired text color for dark mode */
+   
+}
+

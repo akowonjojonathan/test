@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Dentacare</title>
+    <!-- Add your CSS stylesheets and other dependencies here -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Style for the container */
+        .landing-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Make the container full-height */
+            background-image: url('images/Dentist_5.jpg'); /* Updated relative path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative; /* Add this to make absolute positioning work */
+        }
+
+        /* Style for the animated box */
+        .animated-box {
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust background color and opacity */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Add a shadow for the box */
+            animation: fadeIn 1s ease-in-out; /* Add a fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Style for the login button */
+        .landing-button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px; /* Adjust the font size */
+            transition: background-color 0.3s;
+        }
+
+        .landing-button:hover {
+            background-color: lightblue; /* Change to the desired hover color */
+        }
+
+        /* Style for the short line separator */
+        .separator {
+            width: 2px;
+            background-color: #000000;
+        }
+
+        /* Center the content within the animated box */
+        .animated-box-content {
+            text-align: center;
+        }
+    </style>
+    <!-- ... Your existing head content ... -->
+</head>
+<body>
+    <div class="landing-container">
+        <div class="animated-box">
+            <!-- Content for the animated box -->
+            <div class="animated-box-content">
+                <h1 class="landing-heading">DENTACARE  <img src="images/tooth.gif" alt="Tooth Icon" width="50" height="50"></h1>
+                <p>Welcome to Dentacare. Your trusted dental care provider.</p>
+                <p>We offer a range of dental services to keep your smile healthy and beautiful.</p>
+                <p>Ready to get started? Click the button below to log in.</p>
+                <div class="button-container">
+                    <a href="login.html" class="landing-button">Login</a>
+                </div>
+            </div>
+        </div>
+        <!-- Message container -->
+        <div id="message"></div>
+    </div>
+
+    <!-- Include your JavaScript files here -->
+    <script src="js/jquery.min.js"></script>
+    <!-- ... (other script includes) ... -->
+</body>
+</html>

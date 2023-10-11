@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dentacare</title>
+    <!-- Add your CSS stylesheets and other dependencies here -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+
+    <!-- Add CSS for animations (e.g., animate.css) -->
+    <link rel="stylesheet" href="animate.min.css">
+    <style>
+        /* Style for the container */
+        .login-container {
+            display: none; /* Initially hide the container */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Make the container full-height */
+            background-color: #f2f2f2; /* Background color for the container */
+            background-image: url('images/Dentist_2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Style for the animated box */
+        .animated-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Set your desired background color with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow to the box */
+            max-width: 400px; /* Limit the width of the box */
+            width: 100%; /* Ensure it takes the full width of the container */
+            z-index: 1; /* Place the box above the background images */
+            position: relative; /* Ensure proper stacking context */
+        }
+
+        /* Style for form fields */
+        .form-group {
+            margin-bottom: 15px; /* Add some margin between form groups */
+        }
+
+        /* Style for labels */
+        label {
+            font-weight: bold;
+            color: #333; /* Label text color */
+        }
+
+        /* Style for input fields */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc; /* Input border color */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Style for the submit button */
+        button[type="submit"] {
+            background-color: #007bff; /* Set your desired button color */
+            color: #fff; /* Text color for the button */
+            padding: 12px 20px; /* Add padding to the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Style for the submit button on hover */
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Change button color on hover */
+        }
+
+        /* Style for the signup link */
+       
+        /* Style for the notice */
+        .notice {
+            text-align: center;
+            font-weight: bold;
+            color: #ff6600; /* Your desired color for the notice text */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="animated-box animated fadeIn"> <!-- Add animations class -->
+            <div class="notice">
+                Autofilled default username and password
+            </div>
+            <h2 class="animated bounce" align="center">Login</h2><hr> <!-- Add animations class -->
+            <form id="login-form" action="index.html" method="post">
+                <div class="form-group animated fadeInUp"> <!-- Add animations class -->
+                    <label for "username">Username:</label>
+                    <input type="text" id="username" name="username" value="johndoe" required>
+                </div>
+                <div class "form-group animated fadeInUp"> <!-- Add animations class -->
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" value="Abcd123" required>
+                </div>
+
+                <div class="form-group animated fadeInUp"> <!-- Add animations class -->
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to show the login container after page load -->
+    <script>
+        window.addEventListener("load", function () {
+            const loginContainer = document.querySelector(".login-container");
+            loginContainer.style.display = "flex";
+        });
+    </script>
+</body>
+</html>

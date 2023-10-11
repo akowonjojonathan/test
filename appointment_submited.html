@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Successful</title>
+    <!-- Add your CSS stylesheets and other dependencies here -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+
+    <!-- Add CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            text-align: center; /* Center text within the container */
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .countdown {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif" alt="Done" style="width: 100px; height: 100px;" autoplay loop="false" />
+        <h3>Appointment Successfully Sent</h3><hr>
+        <p>Your appointment request has been successfully submitted. We will get back to you shortly to confirm your appointment.</p><hr>
+        <div class="countdown">Redirecting in <span id="countdown">5</span> seconds...</div><hr>
+        <a class="button" href="index.html">Return to Homepage</a>
+    </div>
+
+    <!-- JavaScript to redirect after 5 seconds with countdown -->
+    <script>
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(function () {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "index.html"; // Redirect to the homepage
+            }
+        }, 1000); // Update countdown every 1 second
+    </script>
+</body>
+</html>

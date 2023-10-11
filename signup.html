@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Dentacare</title>
+    <!-- Add your CSS stylesheets and other dependencies here -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+
+    <!-- Add CSS for animations (e.g., animate.css) -->
+    <link rel="stylesheet" href="animate.min.css">
+    <style>
+        /* Style for the container */
+        .signup-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Make the container full-height */
+            background-color: #f2f2f2; /* Background color for the container */
+            background-image: url('images/Dentist_4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Style for the animated box */
+        .animated-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Set your desired background color with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a shadow to the box */
+            max-width: 400px; /* Limit the width of the box */
+            width: 100%; /* Ensure it takes the full width of the container */
+            z-index: 1; /* Place the box above the background images */
+            position: relative; /* Ensure proper stacking context */
+        }
+
+        /* Style for form fields */
+        .form-group {
+            margin-bottom: 15px; /* Add some margin between form groups */
+        }
+
+        /* Style for labels */
+        label {
+            font-weight: bold;
+            color: #333; /* Label text color */
+        }
+
+        /* Style for input fields */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc; /* Input border color */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Style for the submit button */
+        button[type="submit"] {
+            background-color: #007bff; /* Set your desired button color */
+            color: #fff; /* Text color for the button */
+            padding: 12px 20px; /* Add padding to the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Style for the submit button on hover */
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Change button color on hover */
+        }
+
+        /* Style for the login link */
+        .login-link {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .login-link a {
+            text-decoration: none;
+            color: #007bff; /* Link color */
+        }
+
+        /* Style for error messages */
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body background="dentist-black.jpg">
+    <div class="signup-container">
+        <div class="animated-box animated fadeIn">
+            <h2 class="animated bounce" align="center">Signup</h2><hr>
+            <form id="signup-form" action="register.php" method="post">
+                <div class="form-group animated fadeInUp">
+                    <label for="name">Username:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group animated fadeInUp">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error" id="email-error"></span>
+                </div>
+                <!-- Rest of your form fields -->
+            </form>
+            
+                <div class="form-group animated fadeInUp">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error" id="password-error"></span>
+                    <div id="password-strength-meter">
+                        <div class="strength-bar"></div>
+                    </div>
+                    <ul id="requirements-list" class="requirements-list">
+                        <li class="capital-letter">At least one capital letter</li>
+                        <li class="special-character">At least one special character</li>
+                        <li class="number">At least one number</li>
+                        <li class="length">At least 8 characters</li>
+                    </ul>
+                </div>
+                <!-- Add more fields as needed -->
+                <div class="form-group animated fadeInUp">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="password" id="confirmpassword" name="confirmpassword" required>
+                    <span class="error" id="confirmpassword-error"></span>
+                </div>
+                <div class="form-group animated fadeInUp">
+                    <button type="submit"><a href="login.html">Signup</a></button>
+                </div>
+            </form>
+            <div class="login-link">
+                <p><i><em>Have an account already? </em></i><a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function for form validation
+        function validateForm() {
+            const signupForm = document.getElementById('signup-form');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm-password');
+            const passwordError = document.getElementById('password-error');
+            const confirmPasswordError = document.getElementById('confirm-password-error');
+            const passwordStrengthMeter = document.getElementById('password-strength-meter');
+            const strengthBar = document.querySelector('.strength-bar');
+            const requirementsList = document.getElementById('requirements-list');
+
+            signupForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get form input values
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+                const hasCapitalLetter = /[A-Z]/.test(password);
+                const hasSpecialCharacter = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password);
+                const hasNumber = /[0-9]/.test(password);
+
+                // Clear previous error messages
+                passwordError.textContent = '';
+                confirmPasswordError.textContent = '';
+
+                // Validate password complexity
+                if (password.length < 8) {
+                    passwordError.textContent = 'Password must be at least 8 characters.';
+                    return;
+                }
+
+                if (!hasCapitalLetter || !hasSpecialCharacter || !hasNumber) {
+                    passwordError.textContent = 'Password does not meet the requirements.';
+                    return;
+                }
+
+                // Check if password and confirm password match
+                if (password !== confirmPassword) {
+                    confirmPasswordError.textContent = 'Passwords do not match.';
+                    return;
+                }
+
+                // If all validation checks pass, you can submit the form to the backend
+                // Otherwise, display error messages to the user
+            });
+
+            // Check password complexity as the user types
+            passwordInput.addEventListener('input', function () {
+                const password = passwordInput.value;
+                const hasCapitalLetter = /[A-Z]/.test(password);
+                const hasSpecialCharacter = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password);
+                const hasNumber = /[0-9]/.test(password);
+
+                // Clear previous error message
+                passwordError.textContent = '';
+
+                // Update the requirements list
+                requirementsList.classList.remove('hidden');
+                const requirements = requirementsList.getElementsByTagName('li');
+                requirementsList.classList.add('hidden');
+                for (const req of requirements) {
+                    req.classList.remove('met');
+                }
+
+                // Display password complexity requirements
+                if (!hasCapitalLetter) {
+                    requirements[0].classList.add('met');
+                }
+                if (!hasSpecialCharacter) {
+                    requirements[1].classList.add('met');
+                }
+                if (!hasNumber) {
+                    requirements[2].classList.add('met');
+                }
+                if (password.length < 8) {
+                    requirements[3].classList.add('met');
+                }
+
+                // Update the strength bar
+                let strengthPercent = 0;
+                if (hasCapitalLetter) {
+                    strengthPercent += 25;
+                }
+                if (hasSpecialCharacter) {
+                    strengthPercent += 25;
+                }
+                if (hasNumber) {
+                    strengthPercent += 25;
+                }
+                if (password.length >= 8) {
+                    strengthPercent += 25;
+                }
+
+                strengthBar.style.width = strengthPercent + '%';
+                if (strengthPercent === 100) {
+                    strengthBar.style.backgroundColor = 'green';
+                    requirementsList.classList.add('hidden');
+                } else {
+                    strengthBar.style.backgroundColor = 'red';
+                }
+            });
+        }
+
+        // Call the form validation function after the HTML content is loaded
+        document.addEventListener('DOMContentLoaded', validateForm);
+    </script>
+</body>
+</html>

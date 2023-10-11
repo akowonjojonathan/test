@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=homepage.html"> <!-- Automatically redirect after 3 seconds -->
+    <title>See You Again</title>
+    <style>
+        body {
+            background-color: #3498db;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 10px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        /* Add a subtle fade-in animation */
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animated {
+            animation: fade-in 1.5s ease-in;
+        }
+
+        /* Style for the waving Garfield GIF */
+        .garfield {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animated">See You Again</h1>
+    <p>Your session has been successfully logged out. Redirecting to the homepage...</p>
+
+    <!-- Display the waving Garfield GIF -->
+    <img src="https://media.tenor.com/WSRY6fAulMgAAAAj/garfield-monday.gif" alt="Waving Garfield" class="garfield">
+</body>
+</html>
